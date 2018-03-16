@@ -1,7 +1,7 @@
-##Classe 
+## Classe 
 Une classe est la description de données appelées attributs, et d'opérations appelées méthodes. C'est un modèle de définition pour des objets ayant le même ensemble d'attributs, et le même ensemble d'opérations. A partir d'une classe on peut créer un ou plusieurs objets par instanciation
 
-## Inteferace
+## Interface
  Une interface définit un comportement (d'une classe) qui doit être implémenté par une classe, sans implémenter ce comportement. C'est un ensemble de méthodes abstraites, et de constantes.
 
 ## Getter / Setter
