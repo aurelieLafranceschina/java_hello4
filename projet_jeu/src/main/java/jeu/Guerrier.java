@@ -1,4 +1,4 @@
-package main.java.jeu;
+package jeu;
 
 public class Guerrier extends Personnage {
     private String arme;
@@ -25,8 +25,8 @@ public class Guerrier extends Personnage {
     }
 
     public String toString ()
-      {
-          return super.toString() + " sort : " + sort + " philtre" + philtre ;
+      {          
+          return super.toString() + " arme : " + arme + " bouclier " + bouclier; 
       }
 
 

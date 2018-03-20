@@ -1,4 +1,4 @@
-package main.java.jeu;
+package jeu;
 
 public abstract class Personnage  {
     private String nomPerso;
@@ -54,11 +54,8 @@ public abstract class Personnage  {
           this.life_level = life_level;
       }
 
-
-
-
-      public String toString()
-      {
-          return "nom : " + nomPerso + " image " + imgPerso + "niveau de vie : " + life_level + " attaque : " + attack_level;
-      }
+       public String toString()
+       {
+           return " nom : " + nomPerso + " image " + imgPerso + " niveau de vie : " + life_level + " attaque : " + attack_level;
+       }
 }

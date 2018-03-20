@@ -1,4 +1,4 @@
-package main.java.jeu;
+package jeu;
 
 public class Magicien extends Personnage {
     private String sort;
@@ -12,7 +12,7 @@ public class Magicien extends Personnage {
     philtre = "invincible";
     
   } */
-
+  
   public String getSort()
       {
           return this.sort;
@@ -35,6 +35,6 @@ public class Magicien extends Personnage {
 
       public String toString ()
       {
-          return super.toString() + " sort : " + sort + " philtre" + philtre ;
+          return super.toString() + " sort : " + sort + " philtre " + philtre ;
       }
 }
