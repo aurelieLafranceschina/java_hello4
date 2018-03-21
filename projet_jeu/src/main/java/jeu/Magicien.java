@@ -35,6 +35,6 @@ public class Magicien extends Personnage {
 
       public String toString ()
       {
-          return super.toString() + " sort : " + sort + " philtre " + philtre ;
+          return super.toString() + " Sort : " + sort + " Philtre " + philtre ;
       }
 }

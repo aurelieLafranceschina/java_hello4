@@ -26,7 +26,7 @@ public class Guerrier extends Personnage {
 
     public String toString ()
       {          
-          return super.toString() + " arme : " + arme + " bouclier " + bouclier; 
+          return super.toString() + " Arme : " + arme + " Bouclier " + bouclier; 
       }
 
 

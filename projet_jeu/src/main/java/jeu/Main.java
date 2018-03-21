@@ -6,50 +6,63 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);  
-        char reponse = 'O'; // On initialise la variable pour rentrer dans la boucle.
-        
-        
+        char reponse = 'O'; // On initialise la variable pour rentrer dans la boucle.             
         ArrayList<Personnage> perso = new ArrayList<Personnage>(); // sortir de la boucle car réinitialise la variable perso
         
-        while (reponse == 'O'){  
-                Personnage pers;
-                System.out.println("Veuillez choisir un personnage (magicien/guerrier)");
-                String typePerso = sc.nextLine();            
-                if(typePerso.equals("magicien")){
+        while (reponse == 'O')
+        {  
+            Personnage pers;
+            System.out.println("Veuillez choisir un personnage (magicien/guerrier)");
+            String typePerso = sc.nextLine();   
+            if(typePerso.equals("magicien")){
+                //listePerso[i] = 
+                pers = createMagician();
+                pers.setTypePerso("Magicien");            
+            }else{                
                     //listePerso[i] = 
-                    pers = createMagician();            
-                    }else{                
-                        //listePerso[i] = 
-                       pers =  createWarrior();
-                }
-                System.out.println(pers.toString()); // permet d'afficher les attributs du perso créé.
+                   pers =  createWarrior();
+                   pers.setTypePerso("Guerrier");
+            }
+            System.out.println(pers.toString()); // permet d'afficher les attributs du perso créé.
+            reponse =' ';
+            while(reponse !='O' && reponse!='N')
+            {
                 System.out.println("Voulez-vous créer un nouveau personnage ? (O/N)");
                 //On récupère la réponse de l'utilisateur
                 reponse = sc.nextLine().charAt(0);
-                perso.add(pers); // Ajoute le perso à l'ArrayList
+            }
+                    perso.add(pers); // Ajoute le perso à l'ArrayList
 
-                for(int i = 0; i < perso.size(); i++)
+                    for(int i = 0; i < perso.size(); i++)
                     {  
-                    System.out.println( "" + i + "" + perso.get(i));
-                    }       
-            
+                        System.out.println(i + " " + perso.get(i));
+                    }  
         }
-
-
-
         System.out.println("Vos personnages sont crées"); // Quand la réponse est N, la boucle s'arrête. 
         //Fin de la boucle
+        AffichePerso(perso);
+        SelectAction(perso);
+        AffichePerso(perso);
+}
 
-        SelectAction();
-
-        
-
-
+    public static void AffichePerso(ArrayList<Personnage> perso){
+        for(int i = 0; i < perso.size(); i++)
+        {
+            System.out.println(i + " - " + perso.get(i).getTypePerso()+ " " + perso.get(i).getNomPerso());
+        }
     }
 
-    public static void SelectAction(){
-
+    public static void SelectAction(ArrayList<Personnage> perso){
         Scanner sc = new Scanner(System.in);
+        for(int y = 0; y < perso.size(); y++)
+        {   System.out.println("Choisissez un personnage");
+            y = sc.nextInt();
+            String personnageChoisi = perso.get(y).getNomPerso();
+            String typeChoisi = perso.get(y).getTypePerso();
+            System.out.println("Vous avez choisi " + personnageChoisi);
+        
+
+        
         System.out.println("Que souhaitez-vous faire ? ");
 
         ArrayList<String> menu = new ArrayList<String>();
@@ -59,38 +72,38 @@ public class Main {
         menu.add(" Attaquer");
         menu.add(" Supprimer un personnage");
 
-        
-
         for(int i = 0; i < menu.size(); i++)
                     {  
                     System.out.println( "" + i + "" + menu.get(i));
                     }
 
-        String reponse = sc.nextLine();
-            if(reponse.equals("Afficher un personnage")){
-                System.out.println("Je veux afficher un perso");
+        int reponse = sc.nextInt();
+            if(reponse == 1){
+                System.out.println(personnageChoisi);
             }else if
-                (reponse.equals("Modifier un personnage")){
-                System.out.println("Je veux modifier un perso");
+                (reponse == 2){
+                System.out.println("Modifier");
             }else if
-                (reponse.equals("Ajouter une arme ou un sort")){
+                (reponse == 3){
                 System.out.println("Je veux ajouter une arme ou un sort");
+                if(typeChoisi.equals("magicien")){
+                    ArrayList<Magicien> sort = new ArrayList();
+                    sort.add("nouveau sort");
+                }
             }else if
-                (reponse.equals("Attaquer")){
-                System.out.println("Je veux attaquer");
+                (reponse == 4){
+                System.out.println(personnageChoisi + "attaque !");
             }else if
-                (reponse.equals("Supprimer un personnage")){
-                System.out.println("Je veux supprimer un perso");
+                (reponse == 5){
+                perso.remove(personnageChoisi);
+                System.out.println(personnageChoisi + "a été supprimé");
             }else{
-                System.out.println("ERREUR ! Votre réponse est incorrecte");
+                System.out.println("Retour à la liste des personnages");
             }
 
+        }
+
     }
-
-    
-
-    
-
     public static void CreatePersonnage(Personnage p) {
 
         Scanner sc = new Scanner(System.in);

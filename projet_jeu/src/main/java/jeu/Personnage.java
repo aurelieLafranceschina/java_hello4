@@ -1,6 +1,7 @@
 package jeu;
 
 public abstract class Personnage  {
+    private String typePerso;
     private String nomPerso;
     private String imgPerso;
     private int life_level;
@@ -13,6 +14,16 @@ public abstract class Personnage  {
     
        
       } */
+      public String getTypePerso()
+      {
+          return this.typePerso;
+      }
+
+      public void setTypePerso(String typePerso)
+      {
+          this.typePerso = typePerso;
+      }
+
 
       public String getNomPerso()
       {
@@ -56,6 +67,6 @@ public abstract class Personnage  {
 
        public String toString()
        {
-           return " nom : " + nomPerso + " image " + imgPerso + " niveau de vie : " + life_level + " attaque : " + attack_level;
+           return "Type : " + typePerso + " Nom : " + nomPerso + " Image " + imgPerso + " Niveau de vie : " + life_level + " Attaque : " + attack_level;
        }
 }
