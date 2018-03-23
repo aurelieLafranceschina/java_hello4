@@ -1,7 +1,8 @@
 package jeu;
+import java.util.ArrayList;
 
 public class Magicien extends Personnage {
-    private String sort;
+    private ArrayList<Sort> sorts;
     private String philtre;
     
     //Constructeur par défaut
@@ -13,14 +14,14 @@ public class Magicien extends Personnage {
     
   } */
   
-  public String getSort()
+  public ArrayList<Sort> getSort()
       {
-          return this.sort;
+          return this.sorts;
       }
     
-  public void setSort(String s)
+  public void setSort(ArrayList<Sort> s)
       {
-          this.sort = s;
+          this.sorts = s;
       }
 
       public String getPhiltre()
@@ -35,6 +36,6 @@ public class Magicien extends Personnage {
 
       public String toString ()
       {
-          return super.toString() + " Sort : " + sort + " Philtre " + philtre ;
+          return super.toString() + sorts.toString() + " Philtre " + philtre ;
       }
 }

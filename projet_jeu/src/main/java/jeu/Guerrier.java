@@ -1,19 +1,20 @@
 package jeu;
+import java.util.ArrayList;
 
 public class Guerrier extends Personnage {
-    private String arme;
+    private ArrayList<Arme> armes;
     private String bouclier;
 
-    public String getArme()
+    public ArrayList<Arme> getArme()
     {
-        return this.arme;
+        return this.armes;
     }
   
-    public void setArme(String a)
+  public void setArme(ArrayList<Arme> a)
     {
-        this.arme = a;
+        this.armes = a;
     }
-
+   
     public String getBouclier()
     {
         return this.bouclier;
@@ -26,7 +27,7 @@ public class Guerrier extends Personnage {
 
     public String toString ()
       {          
-          return super.toString() + " Arme : " + arme + " Bouclier " + bouclier; 
+          return super.toString() + "Arme" + armes.toString() + " Bouclier " + bouclier; 
       }
 
 
